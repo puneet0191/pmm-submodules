@@ -1,27 +1,27 @@
 [submodule "pmm-client"]
 	path = sources/pmm-client/src/github.com/percona/pmm-client
 	url = https://github.com/percona/pmm-client.git
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "qan-agent"]
 	path = sources/qan-agent/src/github.com/percona/qan-agent
 	url = https://github.com/percona/qan-agent.git
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "node_exporter"]
 	path = sources/node_exporter/src/github.com/prometheus/node_exporter
 	url = https://github.com/percona/node_exporter.git
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "mysqld_exporter"]
 	path = sources/mysqld_exporter/src/github.com/percona/mysqld_exporter
 	url = https://github.com/percona/mysqld_exporter.git
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "mongodb_exporter"]
 	path = sources/mongodb_exporter/src/github.com/percona/mongodb_exporter
 	url = https://github.com/percona/mongodb_exporter.git
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "proxysql_exporter"]
 	path = sources/proxysql_exporter/src/github.com/percona/proxysql_exporter
 	url = https://github.com/percona/proxysql_exporter.git
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "percona-toolkit"]
 	path = sources/percona-toolkit/src/github.com/percona/percona-toolkit
 	url = https://github.com/percona/percona-toolkit.git
@@ -29,36 +29,36 @@
 [submodule "pmm-manage"]
 	path = sources/pmm-manage/src/github.com/percona/pmm-manage
 	url = https://github.com/percona/pmm-manage
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "pmm-managed"]
 	path = sources/pmm-managed/src/github.com/percona/pmm-managed
 	url = https://github.com/percona/pmm-managed
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "qan-api"]
 	path = sources/qan-api/src/github.com/percona/qan-api
 	url = https://github.com/percona/qan-api
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "qan-app"]
 	path = sources/qan-app/src/github.com/percona/qan-app
 	url = https://github.com/percona/qan-app
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "pmm-update"]
 	path = sources/pmm-update
 	url = https://github.com/percona/pmm-update
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "pmm-server"]
 	path = sources/pmm-server
 	url = https://github.com/percona/pmm-server
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "pmm-server-packaging"]
 	path = sources/pmm-server-packaging
 	url = https://github.com/percona/pmm-server-packaging
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "grafana-dashboards"]
 	path = sources/grafana-dashboards
 	url = https://github.com/percona/grafana-dashboards
-	branch = master
+	branch = hotfix-1.9.x
 [submodule "rds_exporter"]
 	path = sources/rds_exporter/src/github.com/percona/rds_exporter
 	url = https://github.com/percona/rds_exporter
-	branch = master
+	branch = hotfix-1.9.x
