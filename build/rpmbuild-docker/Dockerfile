@@ -1,7 +1,8 @@
 FROM centos:7
 
 # enable nodesource repo for nodejs
-RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo
 RUN yum update -y
 RUN yum install -y --setopt=skip_missing_names_on_install=False \
                    gcc gcc-c++ \
@@ -15,15 +16,22 @@ RUN yum install -y --setopt=skip_missing_names_on_install=False \
                    rpmdevtools createrepo_c epel-release \
                    yum-utils rpm-build \
                    wget \
-                   glibc-static
+                   glibc-static \
+                   yarn
 RUN yum -y remove nodesource-release-el7-1.noarch
 RUN yum clean all && rm -rf /var/cache/yum
 
-ENV GO_TARBALL https://dl.google.com/go/go1.12.12.linux-amd64.tar.gz
-RUN wget --progress=dot:giga ${GO_TARBALL} -O /tmp/golang.tar.gz
-RUN tar -C /usr/local -xzf /tmp/golang.tar.gz; \
-    update-alternatives --install "/usr/bin/go" "go" "/usr/local/go/bin/go" 0; \
-    update-alternatives --set go /usr/local/go/bin/go
+ENV GO_VERSION 1.13.8
+ENV GO_CHECKSUM 0567734d558aef19112f2b2873caa0c600f1b4a5827930eb5a7f35235219e9d8
+
+RUN wget --progress=dot:giga https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz -O /tmp/golang.tar.gz
+RUN sha256sum /tmp/golang.tar.gz
+RUN echo "${GO_CHECKSUM} /tmp/golang.tar.gz" | sha256sum -c -
+RUN tar -C /usr/local -xzf /tmp/golang.tar.gz
+RUN update-alternatives --install "/usr/bin/go" "go" "/usr/local/go/bin/go" 0
+RUN update-alternatives --set go /usr/local/go/bin/go
+RUN update-alternatives --install "/usr/bin/gofmt" "gofmt" "/usr/local/go/bin/gofmt" 0
+RUN update-alternatives --set gofmt /usr/local/go/bin/gofmt
 RUN rm /tmp/golang.tar.gz
 
 RUN useradd builder -u 1000 -m -G users,wheel && \
